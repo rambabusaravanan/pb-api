@@ -45,7 +45,7 @@ function ProgressBar(props: Props) {
 
     return <Wrapper>
         <Bar data-testid="bar" style={{ width }} error={error}></Bar>
-        <Text>{width}% ({value})</Text>
+        <Text>{width} ({value})</Text>
     </Wrapper>
 }
 
