@@ -3,7 +3,7 @@ import ProgressSet from './components/ProgressSet';
 import axios from "axios"
 
 
-const _URL = "http://pb-api.herokuapp.com/bars"
+const _URL = "https://pb-api.herokuapp.com/bars"
 
 interface Data {
   buttons: Array<number>,
