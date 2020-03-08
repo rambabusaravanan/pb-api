@@ -17,7 +17,7 @@ https://rambabusaravanan.github.io/pb-api/test/
 
 #### Information
 
-Framework : React
-Unit Test : Jest with testing-library (react-scripts)
-CI        : GitHub Actions
-Hosting   : GitHub Pages
+ - Framework: React
+ - Unit Test: Jest with testing-library (react-scripts)
+ - CI: GitHub Actions
+ - Hosting: GitHub Pages
