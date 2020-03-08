@@ -13,19 +13,27 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
-
+    
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: yarn
-    - run: yarn build
-    - run: yarn test
+        node-version: 12.x
+    - name: Install
+      run: yarn
+    - name: Build
+      run: yarn build
+    - name: Test
+      run: yarn test
       env:
         CI: true
+    - name: Deploy
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v1
+      with:
+          target_branch: gh-pages
+          build_dir: build
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
